@@ -147,7 +147,7 @@ const doubleDigitHours = String(hours).padStart(2, 0);
 const doubleDigitMinutes = String(minutes).padStart(2, 0);
 console.log(`${doubleDigitHours}:${doubleDigitMinutes}`);
 
-//Методы replace() и replaceAll() ( Не поняла)
+//Методы replace() и replaceAll()
 //Возвращают новую строку, в которой первое (replace) или все совпадения (replaceAll) подстроки заменены на указанное значение.
 
 const jsFileName = "script.js";
@@ -158,7 +158,7 @@ const cssFileNames = "styles.css, about.css, portfolio.css";
 const minifiedCssFileNames = cssFileNames.replaceAll(".css", ".min.css");
 console.log(minifiedCssFileNames); // "styles.min.css, about.min.css, portfolio.min.css»
 
-// Метод slice()  Не поняла)
+// Метод slice()
 // Метод строк slice(startIndex, endIndex) используется для создания копии части или всей строки. Он делает копию элементов строки от startIndex и до, но не включая endIndex и возвращает новую строку, не изменяя оригинал.
 
 const productName = "Repair droid";
