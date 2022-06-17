@@ -243,17 +243,17 @@
 // Наприклад фунція число 7,
 // потрібно сумувати 1+2+3+4+5+5+7 = сумма
 
-function sumRange(num) {
-  // 1 ... num
-  let sum = 0;
+// function sumRange(num) {
+//   // 1 ... num
+//   let sum = 0;
 
-  for (let i = 1; i <= num; i += 1) {
-    sum += i;
-  }
+//   for (let i = 1; i <= num; i += 1) {
+//     sum += i;
+//   }
 
-  return sum;
-}
+//   return sum;
+// }
 
-console.log(sumRange(2)); // 3
-console.log(sumRange(3)); // 6
-console.log(sumRange(7)); // 28
+// console.log(sumRange(2)); // 3
+// console.log(sumRange(3)); // 6
+// console.log(sumRange(7)); // 28

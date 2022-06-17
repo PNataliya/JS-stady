@@ -3,15 +3,15 @@
 //Если в имени ровно 4 буквы, можете быть уверены, что оно должно быть вашим другом! В противном случае, вы можете быть уверены, что он не...
 //Ex: Input = ["Ryan", "Kieran", "Jason", "Yous"], Output = ["Ryan", "Yous"]
 
-const friends = ["Ryan", "Kieran", "Jason", "Yous"];
-const output = [];
+// const friends = ["Ryan", "Kieran", "Jason", "Yous"];
+// const output = [];
 
-for (const name of friends) {
-  if (friends.length === 4);
-  output.push(name);
-}
+// for (const name of friends) {
+//   if (friends.length === 4);
+//   output.push(name);
+// }
 
-console.log(output);
+// console.log(output);
 
 // ============ автопроверка модуль 2.1 ==== задача 11/32 ============
 
@@ -21,41 +21,41 @@ console.log(output);
 
 //Напиши тело функции, чтобы она возвращала общую стоимость гравировки всех слов в строке.
 
-function calculateEngravingPrice(message, pricePerWord) {
-  // Change code below this line
-  //const totalWords = message.length;
-  let newMessage = message.split(" ");
-  const newMessageLength = newMessage.length;
-  //let totalPrice = newMessage;
-  //console.log(newMessageLength);
-  //console.log(newMessage.length);
-  //console.log(pricePerWord);
-  return newMessageLength * pricePerWord;
-  //* return {
-  // возвращает объект с именами
-  // message, // то же самое что и message: message,
-  // pricePerWord, //то же самое что и pricePerWord: pricePerWord,
+// function calculateEngravingPrice(message, pricePerWord) {
+//   // Change code below this line
+//   //const totalWords = message.length;
+//   let newMessage = message.split(" ");
+//   const newMessageLength = newMessage.length;
+//   //let totalPrice = newMessage;
+//   //console.log(newMessageLength);
+//   //console.log(newMessage.length);
+//   //console.log(pricePerWord);
+//   return newMessageLength * pricePerWord;
+//* return {
+// возвращает объект с именами
+// message, // то же самое что и message: message,
+// pricePerWord, //то же самое что и pricePerWord: pricePerWord,
 
-  // Change code above this line
-}
-console.log(calculateEngravingPrice("JavaScript is in my blood", 10));
-console.log(calculateEngravingPrice("JavaScript is in my blood", 20));
-console.log(calculateEngravingPrice("Web-development is creative work", 40));
-console.log(calculateEngravingPrice("Web-development is creative work", 20));
+// Change code above this line
+// }
+// console.log(calculateEngravingPrice("JavaScript is in my blood", 10));
+// console.log(calculateEngravingPrice("JavaScript is in my blood", 20));
+// console.log(calculateEngravingPrice("Web-development is creative work", 40));
+// console.log(calculateEngravingPrice("Web-development is creative work", 20));
 
 //============
 
-function slugify(title) {
-  // Change code below this line
-  return title.toLowerCase().split(" ").join("-");
+// function slugify(title) {
+//   // Change code below this line
+//   return title.toLowerCase().split(" ").join("-");
 
-  // Change code above this line
-}
+//   // Change code above this line
+// }
 
-console.log(slugify("Arrays for begginers"));
-console.log(slugify("English for developer"));
-console.log(slugify("Ten secrets of JavaScript"));
-console.log(slugify("How to become a JUNIOR developer in TWO WEEKS"));
+// console.log(slugify("Arrays for begginers"));
+// console.log(slugify("English for developer"));
+// console.log(slugify("Ten secrets of JavaScript"));
+// console.log(slugify("How to become a JUNIOR developer in TWO WEEKS"));
 
 // ============================================
 // Example 4 - Массивы и циклы
@@ -76,11 +76,11 @@ console.log(slugify("How to become a JUNIOR developer in TWO WEEKS"));
 // }
 
 //===========================
-function slugify(string) {
-  return string.toLowerCase().split(" ").join("-");
-}
+// function slugify(string) {
+//   return string.toLowerCase().split(" ").join("-");
+// }
 
-console.log(slugify("Arrays for begginers"));
+// console.log(slugify("Arrays for begginers"));
 //=======================
 
 // ========= example =========
@@ -126,22 +126,22 @@ console.log(slugify("Arrays for begginers"));
 
 //=============================
 //Напиши функцию findLongestWord(string) которая принимает произвольную строку состоящую только из слов разделённых пробелом (параметр string) и возвращает самое длинное слово в этой строке.
-function findLongestWord(string) {
-  let stringSplit = string.split(" ");
-  let longestWord = "";
-  let longOfWord = 0;
-  for (let i = 0; i < stringSplit.length; i += 1) {
-    if (stringSplit[i].length > longOfWord) {
-      longOfWord = stringSplit[i].length;
-      longestWord = stringSplit[i];
-    }
-  }
+// function findLongestWord(string) {
+//   let stringSplit = string.split(" ");
+//   let longestWord = "";
+//   let longOfWord = 0;
+//   for (let i = 0; i < stringSplit.length; i += 1) {
+//     if (stringSplit[i].length > longOfWord) {
+//       longOfWord = stringSplit[i].length;
+//       longestWord = stringSplit[i];
+//     }
+//   }
 
-  return longestWord;
-}
-console.log(findLongestWord("The quick brown fox jumped over the lazy dog"));
-console.log(findLongestWord("Google do a roll"));
-console.log(findLongestWord("May the force be with you"));
+//   return longestWord;
+// }
+// console.log(findLongestWord("The quick brown fox jumped over the lazy dog"));
+// console.log(findLongestWord("Google do a roll"));
+// console.log(findLongestWord("May the force be with you"));
 
 //===========
 
@@ -159,17 +159,17 @@ console.log(findLongestWord("May the force be with you"));
 //Метод push() позволяет добавить один или несколько элементов в конец массива, без необходимости указывать индексы добавляемых элементов.
 //Дополни код функции createArrayOfNumbers(min, max) так, чтобы она возвращала массив всех целых чисел от значения min до max.
 //В цикле for использовался метод push
-function createArrayOfNumbers(min, max) {
-  const numbers = [];
-  // Change code below this line
-  for (let i = min; i <= max; i++) numbers.push(i);
+// function createArrayOfNumbers(min, max) {
+//   const numbers = [];
+//   // Change code below this line
+//   for (let i = min; i <= max; i++) numbers.push(i);
 
-  // Change code above this line
-  return numbers;
-}
-console.log(createArrayOfNumbers(1, 3));
-console.log(createArrayOfNumbers(14, 17));
-console.log(createArrayOfNumbers(29, 34));
+//   // Change code above this line
+//   return numbers;
+// }
+// console.log(createArrayOfNumbers(1, 3));
+// console.log(createArrayOfNumbers(14, 17));
+// console.log(createArrayOfNumbers(29, 34));
 
 // более короткая запись кода:
 // const createArrayOfNumbers = (min, max) => Array.from({ length: max - min + 1 }, (_, i) => i + min);
@@ -193,47 +193,47 @@ console.log(createArrayOfNumbers(29, 34));
 //Найти все простые числа в массиве
 //В следующем примере возвращаются все простые числа в массиве:
 
-const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+// const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
-function isPrime(num) {
-  for (let i = 2; num > i; i++) {
-    if (num % i == 0) {
-      return false;
-    }
-  }
-  return num > 1;
-}
+// function isPrime(num) {
+//   for (let i = 2; num > i; i++) {
+//     if (num % i == 0) {
+//       return false;
+//     }
+//   }
+//   return num > 1;
+// }
 
-console.log(array.filter(isPrime)); // [2, 3, 5, 7, 11, 13]
+// console.log(array.filter(isPrime)); // [2, 3, 5, 7, 11, 13]
 //==============================
 
-// Перебрать массив
-const items = ["item1", "item2", "item3"];
-const copy = [];
+// // Перебрать массив
+// const items = ["item1", "item2", "item3"];
+// const copy = [];
 
-for (let i = 0; i < items.length; i += 1) {
-  copy.push("New" + items[i]);
-}
-console.log(copy);
+// for (let i = 0; i < items.length; i += 1) {
+//   copy.push("New" + items[i]);
+// }
+// console.log(copy);
 
-//==========================
-//Напиши функцию filterArray(numbers, value), которая принимает массив чисел (параметр numbers) и возвращает новый массив, в котором будут только те элементы массива numbers, которые больше чем значение параметра value (число).
-function filterArray(numbers, value) {
-  const newArray = [];
-  for (const number of numbers) {
-    if (number > value) {
-      newArray.push(number);
-    } else {
-      continue;
-    }
-  }
-  return newArray;
-}
-console.log(filterArray([1, 2, 3, 4, 5], 3));
-console.log(filterArray([1, 2, 3, 4, 5], 4));
-console.log(filterArray([1, 2, 3, 4, 5], 5));
-console.log(filterArray([12, 24, 8, 41, 76], 38));
-console.log(filterArray([12, 24, 8, 41, 76], 20));
+// //==========================
+// //Напиши функцию filterArray(numbers, value), которая принимает массив чисел (параметр numbers) и возвращает новый массив, в котором будут только те элементы массива numbers, которые больше чем значение параметра value (число).
+// function filterArray(numbers, value) {
+//   const newArray = [];
+//   for (const number of numbers) {
+//     if (number > value) {
+//       newArray.push(number);
+//     } else {
+//       continue;
+//     }
+//   }
+//   return newArray;
+// }
+// console.log(filterArray([1, 2, 3, 4, 5], 3));
+// console.log(filterArray([1, 2, 3, 4, 5], 4));
+// console.log(filterArray([1, 2, 3, 4, 5], 5));
+// console.log(filterArray([12, 24, 8, 41, 76], 38));
+// console.log(filterArray([12, 24, 8, 41, 76], 20));
 
 // == второй вариант=====
 // function filterArray(numbers, value) {
@@ -262,16 +262,12 @@ console.log(filterArray([12, 24, 8, 41, 76], 20));
 //При выполнении этой задачи в теле функции includes() нельзя использовать метод массив.includes(значение).
 
 function includes(array, value) {
-  //
-
-  let foundIt = value;
-  foundIt = false;
   for (let i = 0; i < array.length; i += 1) {
-    // const arr = array[i];
-    if (array[i] !== value) {
+    if (array[i] === value) {
       return true;
     }
   }
+  return false;
 }
 console.log(includes([1, 2, 3, 4, 5], 3));
 console.log(includes([1, 2, 3, 4, 5], 17));
