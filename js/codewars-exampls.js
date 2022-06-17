@@ -170,3 +170,116 @@ function createArrayOfNumbers(min, max) {
 console.log(createArrayOfNumbers(1, 3));
 console.log(createArrayOfNumbers(14, 17));
 console.log(createArrayOfNumbers(29, 34));
+
+// более короткая запись кода:
+// const createArrayOfNumbers = (min, max) => Array.from({ length: max - min + 1 }, (_, i) => i + min);
+
+//========================
+// const values = [51, -3, 27, 21, -68, 42, -37];
+
+// const positiveValues = values.filter(value => value >= 0);
+// console.log(positiveValues); // [51, 27, 21, 42]
+
+// const negativeValues = values.filter(value => value < 0);
+// console.log(negativeValues); // [-3, -68, -37]
+
+// const bigValues = values.filter(value => value > 1000);
+// console.log(bigValues); // []
+
+// Оригинальный массив не изменился
+// console.log(values); // [51, -3, 27, 21, -68, 42, -37]
+//=========================
+
+//Найти все простые числа в массиве
+//В следующем примере возвращаются все простые числа в массиве:
+
+const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+
+function isPrime(num) {
+  for (let i = 2; num > i; i++) {
+    if (num % i == 0) {
+      return false;
+    }
+  }
+  return num > 1;
+}
+
+console.log(array.filter(isPrime)); // [2, 3, 5, 7, 11, 13]
+//==============================
+
+// Перебрать массив
+const items = ["item1", "item2", "item3"];
+const copy = [];
+
+for (let i = 0; i < items.length; i += 1) {
+  copy.push("New" + items[i]);
+}
+console.log(copy);
+
+//==========================
+//Напиши функцию filterArray(numbers, value), которая принимает массив чисел (параметр numbers) и возвращает новый массив, в котором будут только те элементы массива numbers, которые больше чем значение параметра value (число).
+function filterArray(numbers, value) {
+  const newArray = [];
+  for (const number of numbers) {
+    if (number > value) {
+      newArray.push(number);
+    } else {
+      continue;
+    }
+  }
+  return newArray;
+}
+console.log(filterArray([1, 2, 3, 4, 5], 3));
+console.log(filterArray([1, 2, 3, 4, 5], 4));
+console.log(filterArray([1, 2, 3, 4, 5], 5));
+console.log(filterArray([12, 24, 8, 41, 76], 38));
+console.log(filterArray([12, 24, 8, 41, 76], 20));
+
+// == второй вариант=====
+// function filterArray(numbers, value) {
+//   const newArray = [];
+
+//   for (let i = 0; numbers.length > i; i++) {
+//     if (numbers[i] > value) {
+//       newArray.push(numbers[i]);
+//     }
+//   }
+//   return newArray;
+// }
+//Есть переменная newArray по умолчанию она пустой массив. Есть у функции 2 параметра. numbers, value. Numbers получает в себя массив, в данном случае это массив цифр. Value получает число, по условию новый массив должен содержать числа которые больше чем это число.
+//Фор оф как работает.
+// for ( const number of numbers) {}
+// Получается numbers это массив который передаётся в функцию.
+// А number это будет каждый элемент этого массива
+// То есть фор оф он как бы раскрывает этот массив давая доступ к каждому элементу. Ну абстрактно он с массива убирает скобочки квадратные))) и дальше каждый Элемент будет храниться в переменой item
+// Нужно задать условие что если этот item больше value  то мы пушим этот item в newArray а в противном случае мы делаем пропуск итерации благодаря continue. Дальше ретурн у Вас правильный (отредактировано)
+
+// Важно понимать что пишешь и мысленно себя провожать, мол, вот у меня есть ф-ция, я знаю что сюда приходит то, а в вэлъю то, мне нужно вернуть новый массив, ага, если я вцикле создам переменную то за циклом я ее не могу уже использовать, так нужно сделать переменную с пустым массивом, дальше я перебираю масив, ага в переменной number у меня будет каждая цифра, так теперь мне нужно сделать условие и тра та та)))
+
+// =======
+// Напиши функцию includes(array, value), которая делает тоже самое, что и метод массива массив.includes(значение) - проверяет, есть ли в массиве array значение value, возвращая true если есть и false в противном случае.
+
+//При выполнении этой задачи в теле функции includes() нельзя использовать метод массив.includes(значение).
+
+function includes(array, value) {
+  //
+
+  let foundIt = value;
+  foundIt = false;
+  for (let i = 0; i < array.length; i += 1) {
+    // const arr = array[i];
+    if (array[i] !== value) {
+      return true;
+    }
+  }
+}
+console.log(includes([1, 2, 3, 4, 5], 3));
+console.log(includes([1, 2, 3, 4, 5], 17));
+console.log(
+  includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Jupiter")
+);
+console.log(
+  includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Uranus")
+);
+console.log(includes(["apple", "plum", "pear", "orange"], "plum"));
+console.log(includes(["apple", "plum", "pear", "orange"], "kiwi"));
