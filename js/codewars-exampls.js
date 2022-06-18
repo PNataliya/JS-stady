@@ -261,24 +261,24 @@
 
 //При выполнении этой задачи в теле функции includes() нельзя использовать метод массив.includes(значение).
 
-function includes(array, value) {
-  for (let i = 0; i < array.length; i += 1) {
-    if (array[i] === value) {
-      return true;
-    }
-  }
-  return false;
-}
-console.log(includes([1, 2, 3, 4, 5], 3));
-console.log(includes([1, 2, 3, 4, 5], 17));
-console.log(
-  includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Jupiter")
-);
-console.log(
-  includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Uranus")
-);
-console.log(includes(["apple", "plum", "pear", "orange"], "plum"));
-console.log(includes(["apple", "plum", "pear", "orange"], "kiwi"));
+// function includes(array, value) {
+//   for (let i = 0; i < array.length; i += 1) {
+//     if (array[i] === value) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+// console.log(includes([1, 2, 3, 4, 5], 3));
+// console.log(includes([1, 2, 3, 4, 5], 17));
+// console.log(
+//   includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Jupiter")
+// );
+// console.log(
+//   includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Uranus")
+// );
+// console.log(includes(["apple", "plum", "pear", "orange"], "plum"));
+// console.log(includes(["apple", "plum", "pear", "orange"], "kiwi"));
 
 // ==============================
 
@@ -286,13 +286,13 @@ console.log(includes(["apple", "plum", "pear", "orange"], "kiwi"));
 // Задание
 // Напиши функцию getExtremeElements(array) которая принимает один параметр array - массив элементов произвольной длины. Функция должна возвращать массив из двух элементов - первого и последнего элемента параметра array.
 
-function getExtremeElements(array) {
-  // Change code below this line
+// function getExtremeElements(array) {
+//   // Change code below this line
 
-  return "[" + [array[0]] + ", " + array[array.length - 1] + "]";
+//   return "[" + [array[0]] + ", " + array[array.length - 1] + "]";
 
-  // Change code above this line
-}
-console.log(getExtremeElements([1, 2, 3, 4, 5]));
-console.log(getExtremeElements(["Earth", "Mars", "Venus"]));
-console.log(getExtremeElements(["apple", "peach", "pear", "banana"]));
+//   // Change code above this line
+// }
+// console.log(getExtremeElements([1, 2, 3, 4, 5]));
+// console.log(getExtremeElements(["Earth", "Mars", "Venus"]));
+// console.log(getExtremeElements(["apple", "peach", "pear", "banana"]));

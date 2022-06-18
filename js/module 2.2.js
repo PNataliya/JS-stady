@@ -1,4 +1,4 @@
-console.log("module 02.2");
+// console.log("module 02.2");
 
 // ======== IIFE =========
 // (function () {
@@ -318,3 +318,27 @@ console.log("module 02.2");
 // знайти дублікати
 
 const arr1 = [1, 2, 3, 2, 4, 5, 1, 6]; // [1, 2];
+const res = [];
+
+for (let i = 0; i < arr1.length; i += 1) {
+  if (number[i] === number) {
+    number.push(res);
+  }
+}
+console.log(res);
+// ======================
+
+const numbers = [1, 2, 3, 2, 4, 5, 5, 6];
+
+const set = new Set(numbers);
+
+const duplicates = numbers.filter((item) => {
+  if (set.has(item)) {
+    set.delete(item);
+  } else {
+    return item;
+  }
+});
+
+console.log(duplicates);
+// [ 2, 5 ]
