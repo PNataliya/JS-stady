@@ -1,4 +1,58 @@
-//
+//======= task 10 =========
+// Перебери объект apartment используя цикл for...in и запиши в массив keys все его ключи, а в массив values все значения его свойств.
+// Объявлена переменная apartment
+// Значение переменной apartment это объект
+// Объявлена переменная keys
+// Значение переменной keys это массив ["descr", "rating", "price"]
+// Объявлена переменная values
+// Значение переменной values это массив ["Spacious apartment in the city center", 4, 2153]
+const apartment = {
+  descr: "Spacious apartment in the city center",
+  rating: 4,
+  price: 2153,
+};
+const keys = [];
+const values = [];
+// Change code below this line
+for (const key in apartment) {
+  keys.push(key);
+
+  values.push(apartment[key]);
+}
+// ============================================
+
+// =========task 11 =================
+// Выполни рефакторинг решения предыдущего задания добавив в цикл for...in проверку на собственное свойство.
+//Объявлена переменная advert.
+// Значение переменной advert это объект.
+// Объявлена переменная apartment.
+// Значение переменной apartment это объект.
+// Объявлена переменная keys.
+// Значение переменной keys это массив ["descr", "rating", "price"].
+// Объявлена переменная values.
+// Значение переменной values это массив ["Spacious apartment in the city center", 4, 2153].
+const keys = [];
+const values = [];
+const advert = {
+  service: "apt",
+};
+const apartment = Object.create(advert);
+apartment.descr = "Spacious apartment in the city center";
+apartment.rating = 4;
+apartment.price = 2153;
+
+for (const key in apartment) {
+  // Change code below this line
+  if (apartment.hasOwnProperty(key)) {
+    keys.push(key);
+    values.push(apartment[key]);
+  }
+
+  // Change code above this line
+}
+
+// =========== task 12 =====================
+
 //Напиши функцию countProps(object), которая считает и возвращает количество собственных свойств объекта в параметре object. Используй переменную propCount для хранения количества свойств объекта.
 
 //Объявлена функция countProps(object)
@@ -27,3 +81,4 @@ console.log(countProps({ mail: "poly@mail.com", isOnline: true, score: 500 }));
 // Таким образом в текущей реализации собирается большая строка, содержащая имена всех перечислимых ключей.
 
 // Для того, чтобы найти количество, достаточно было увеличивать счетчик на единицу
+// ================================
