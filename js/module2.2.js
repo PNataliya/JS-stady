@@ -315,18 +315,6 @@
 // console.log(res);
 
 // ===== excercise ======
-// знайти дублікати
-
-const arr1 = [1, 2, 3, 2, 4, 5, 1, 6]; // [1, 2];
-const res = [];
-
-for (let i = 0; i < arr1.length; i += 1) {
-  if (number[i] === number) {
-    number.push(res);
-  }
-}
-console.log(res);
-// ======================
 
 const numbers = [1, 2, 3, 2, 4, 5, 5, 6];
 
@@ -342,3 +330,4 @@ const duplicates = numbers.filter((item) => {
 
 console.log(duplicates);
 // [ 2, 5 ]
+//=========================
