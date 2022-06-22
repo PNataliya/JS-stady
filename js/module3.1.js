@@ -187,6 +187,48 @@
 // Вызов getAllPropValues("price") возвращает [1300, 2700, 400, 1200]
 // Вызов getAllPropValues("category") возвращает []
 
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
+
+// function getAllPropValues(propName) {
+//   let allNames = [];
+//   for (let product of products) {
+//     if (propName === "name") {
+//       allNames.push(product.name);
+//     }
+//     if (propName === "quantity") {
+//       allNames.push(product.quantity);
+//     }
+//     if (propName === "price") {
+//       allNames.push(product.price);
+//     } else {
+//       allNames.push();
+//     }
+//     //console.log(product.name);
+//   }
+//   return allNames;
+// }
+
+// console.log(getAllPropValues("name"));
+// console.log(getAllPropValues("quantity"));
+// console.log(getAllPropValues("price"));
+// console.log(getAllPropValues("category"));
+
+//============
+// ============= task 20 ==============
+//Напиши функцию calculateTotalPrice(productName) которая принимает один параметр productName - название товара. Функция должна вернуть общую стоимость (цена * количество) товара с таким именем из массива products.
+
+// Объявлена функция calculateTotalPrice(productName)
+// Вызов calculateTotalPrice("Blaster") возвращает 0
+// Вызов calculateTotalPrice("Radar") возвращает 5200
+// Вызов calculateTotalPrice("Droid") возвращает 2800
+// Вызов calculateTotalPrice("Grip") возвращает 10800
+// Вызов calculateTotalPrice("Scanner") возвращает 8100
+
 const products = [
   { name: "Radar", price: 1300, quantity: 4 },
   { name: "Scanner", price: 2700, quantity: 3 },
@@ -194,28 +236,45 @@ const products = [
   { name: "Grip", price: 1200, quantity: 9 },
 ];
 
-function getAllPropValues(propName) {
-  let allNames = [];
-  for (let product of products) {
-    if (propName === "name") {
-      allNames.push(product.name);
+function calculateTotalPrice(productName) {
+  // Пиши код ниже этой строки
+  for (const product of products) {
+    if (product.name === productName) {
+      return product.price * product.quantity;
     }
-    if (propName === "quantity") {
-      allNames.push(product.quantity);
-    }
-    if (propName === "price") {
-      allNames.push(product.price);
-    } else {
-      allNames.push();
-    }
-    //console.log(product.name);
   }
-  return allNames;
+  return 0;
+  // Пиши код выше этой строки
 }
+console.log(calculateTotalPrice("Blaster"));
+console.log(calculateTotalPrice("Radar"));
+console.log(calculateTotalPrice("Droid"));
+console.log(calculateTotalPrice("Grip"));
+console.log(calculateTotalPrice("Scanner"));
 
-console.log(getAllPropValues("name"));
-console.log(getAllPropValues("quantity"));
-console.log(getAllPropValues("price"));
-console.log(getAllPropValues("category"));
+// ============== Gery 3.1 =======
+// -----------------------------------------------------
+// Example 3 - Массив объектов
+// Напишите ф-цию calcTotalPrice(stones, stoneName), которая принимает массив обьектов и строку с названием камня. Ф-ция считает и возвращает общую стоимость камней с таким именем, ценой и количеством из обьекта
+// Код
 
-//============
+// function calcTotalPrice(stones, stoneName) {
+//   for (const item of stones) {
+//     if (item.name === stoneName) {
+//       return item.price * item.quantity;
+//     }
+//   }
+
+//   return 0;
+// }
+
+// const stones = [
+//   { name: "Изумруд", price: 1300, quantity: 4 }, // 5200
+//   { name: "Бриллиант", price: 2700, quantity: 3 },
+//   { name: "Сапфир", price: 400, quantity: 7 },
+//   { name: "Щебень", price: 200, quantity: 2 }, // 400
+// ];
+
+// console.log(calcTotalPrice(stones, "Изумруд"));
+// console.log(calcTotalPrice(stones, "Щебень"));
+// console.log(calcTotalPrice(stones, "sdgsfg"));
