@@ -278,3 +278,194 @@ console.log(calculateTotalPrice("Scanner"));
 // console.log(calcTotalPrice(stones, "Изумруд"));
 // console.log(calcTotalPrice(stones, "Щебень"));
 // console.log(calcTotalPrice(stones, "sdgsfg"));
+
+//============== task 26 =====
+// Функция calculateMeanTemperature(forecast) принимает один параметр forecast - объект температур на два дня следующего формата:
+// {
+// today: { low: 10, high: 20 },
+// tomorrow: { low: 20, high: 30 }
+// }
+// Замени объявления переменных todayLow, todayHigh, tomorrowLow и tomorrowHigh одной операцией деструктуризации свойств объекта forecast.
+
+// Change code below this line
+function calculateMeanTemperature(forecast) {
+  const {
+    today: { low: todayLow = 10, high: todayHigh = 20 },
+    tomorrow: { low: tomorrowLow = 20, high: tomorrowHigh = 30 },
+  } = forecast;
+
+  // Change code above this line
+  return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
+}
+
+console.log(
+  calculateMeanTemperature({
+    today: { low: 28, high: 32 },
+    tomorrow: { low: 25, high: 29 },
+  })
+);
+console.log(
+  calculateMeanTemperature({
+    today: { low: 37, high: 40 },
+    tomorrow: { low: 33, high: 38 },
+  })
+);
+
+// ============= task 30 =============
+// Напиши функцию makeTask(data) которая принимает один параметр data - объект со следующими свойствами.
+
+// text - текст задачи.
+// category - категория задачи.
+// priority - приоритет задачи.
+// Функция должна составить и вернуть новый объект задачи, не изменяя напрямую параметр data. В новом объекте должно быть свойство completed, значение которого хранится в одноимённой локальной переменной.
+
+// В параметре data гарантированно будет только свойство text, а остальные два, category и priority, могут отсутствовать. Тогда, в новом объекте задачи, в свойствах category и priority должны быть значения по умолчанию, хранящиеся в одноимённых локальных переменных.
+
+// ТЕСТЫ ===
+// Объявлена функция makeTask(data)
+// Вызов makeTask({}) возвращает { category: "General", priority: "Normal", completed: false }
+// Вызов makeTask({ category: "Homemade", priority: "Low", text: "Take out the trash" }) возвращает { category: "Homemade", priority: "Low", text: "Take out the trash", completed: false }
+// Вызов makeTask({ category: "Finance", text: "Take interest" }) возвращает { category: "Finance", priority: "Normal", text: "Take interest", completed: false }
+// Вызов makeTask({ priority: "Low", text: "Choose shampoo" }) возвращает { category: "General", priority: "Low", text: "Choose shampoo", completed: false }
+// Вызов makeTask({ text: "Buy bread" }) возвращает { category: "General", priority: "Normal", text: "Buy bread", completed: false }
+
+function makeTask(data) {
+  const completed = false;
+  const category = "General";
+  const priority = "Normal";
+  // Change code below this line
+
+  return { ...{ category, priority, completed }, ...data };
+  // Change code above this line
+}
+console.log(makeTask({}));
+console.log(
+  makeTask({
+    category: "Homemade",
+    priority: "Low",
+    text: "Take out the trash",
+  })
+);
+console.log(makeTask({ category: "Finance", text: "Take interest" }));
+console.log(makeTask({ priority: "Low", text: "Choose shampoo" }));
+console.log(makeTask({ text: "Buy bread" }));
+// ============================
+
+let options = {
+  title: "My menu",
+  items: ["Item1", "Item2"],
+};
+
+function showMenu({
+  title = "Untitled",
+  width: w = 100, // width присваиваем в w
+  height: h = 200, // height присваиваем в h
+  items: [item1, item2], // первый элемент items присваивается в item1, второй в item2
+}) {
+  console.log(`${title} ${w} ${h}`); // My Menu 100 200
+  console.log(item1); // Item1
+  console.log(item2); // Item2
+}
+
+showMenu(options);
+
+// ======= task 33 ======
+// Функция findMatches() принимает произвольное количество аргументов. Первым аргументом всегда будет массив чисел, а остальные аргументы будут просто числами.
+
+// Дополни код функции так, чтобы она возвращала новый массив matches, в котором будут только те аргументы, начиная со второго, которые есть в массиве первого аргумента.
+
+// Например, findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7) должна вернуть массив [1, 2], потому что только они есть в массиве первого аргумента.
+// Объявлена функция findMatches()
+// Вызов findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7) возвращает [1, 2]
+// Вызов findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2) возвращает [17, 89, 2]
+// Вызов findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41) возвращает [24, 9, 41]
+// Вызов findMatches([63, 11, 8, 29], 4, 7, 16) возвращает []
+
+// Change code below this line
+function findMatches(numbers, ...args) {
+  const matches = []; // Don't change this line
+  for (const number of numbers) {
+    if (args.includes(number)) {
+      matches.push(number);
+    }
+  }
+  // Change code above this line
+  return matches;
+}
+//=================================
+// = freeCodeCamp----Search and Replace ======
+
+function myReplace(str, before, after) {
+  let arr = str.split(" ");
+  for (let i = 0; i < arr.length; i += 1) {
+    if (arr[i].toLowerCase() !== arr[i]) {
+      after = after[0].toUpperCase(+after.slice(1));
+    }
+    arr.splice(i, 1, after);
+  }
+  str = arr.join(" ");
+  return str;
+}
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+//==================
+const array = [2, 5, 9];
+
+console.log(array);
+
+const index = array.indexOf(9);
+if (index > -1) {
+  array.splice(2, 1);
+  array.splice(0, 0, 9);
+}
+
+// array = [2, 9]
+console.log(array);
+
+//======== task 35 ===========
+const bookShelf = {
+  books: ["The last kingdom", "Haze", "The guardian of dreams"],
+  updateBook(oldName, newName) {
+    // Change code below this line
+    const bookIndex = this.books.indexOf(oldName);
+    if (bookIndex > -1) {
+      this.books.splice(bookIndex, 1, newName);
+    }
+  },
+};
+console.log(bookShelf.updateBook("Haze", "Dungeon chronicles")); // ["The last kingdom", "Dungeon chronicles", "The guardian of dreams"]
+console.log(bookShelf.updateBook("The last kingdom", "Dune")); // ["Dune", "Haze", "The guardian of dreams"]
+//=================================
+
+// ==========task 39 ==========
+// Дополни метод removePotion(potionName) так, чтобы он удалял зелье potionName из массива зелий в свойстве potions.
+// Объявлена переменная atTheOldToad
+// Значение переменной atTheOldToad это объект
+// Значение свойства atTheOldToad.potions это массив ["Speed potion", "Dragon breath", "Stone skin"]
+// Значение свойства atTheOldToad.removePotion это метод объекта
+// После первого вызова метода atTheOldToad.removePotion("Dragon breath"), в свойстве potions будет массив ["Speed potion", Stone skin"]
+// После второго вызова метода atTheOldToad.removePotion("Speed potion"), в свойстве potions будет массив ["Stone skin"]
+
+const atTheOldToad = {
+  potions: ["Speed potion", "Dragon breath", "Stone skin"],
+  removePotion(potionName) {
+    // Change code below this line
+    const message = this.potions.indexOf(potionName);
+
+    this.potions.splice(message, 1);
+  },
+};
+console.log(atTheOldToad.removePotion("Dragon breath"));
+console.log(atTheOldToad.removePotion("Speed potion"));
+
+// const message = this.potions.indexOf(potionName);
+// if (message > -1) {
+//   this.potions.splice(1, 1);
+// }
+
+var myArray = [
+  { id: 1, name: "Morty" },
+  { id: 2, name: "Rick" },
+  { id: 3, name: "Anna" },
+];
+var newArray = myArray.filter((item) => item.id !== 1);
+console.table(newArray);
