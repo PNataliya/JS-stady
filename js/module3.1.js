@@ -229,39 +229,39 @@
 // Вызов calculateTotalPrice("Grip") возвращает 10800
 // Вызов calculateTotalPrice("Scanner") возвращает 8100
 
-const products = [
-  { name: "Radar", price: 1300, quantity: 4 },
-  { name: "Scanner", price: 2700, quantity: 3 },
-  { name: "Droid", price: 400, quantity: 7 },
-  { name: "Grip", price: 1200, quantity: 9 },
-];
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
 
-function calculateTotalPrice(productName) {
-  // Пиши код ниже этой строки
-  for (const product of products) {
-    if (product.name === productName) {
-      return product.price * product.quantity;
-    }
-  }
-  return 0;
-  // Пиши код выше этой строки
-}
-console.log(calculateTotalPrice("Blaster"));
-console.log(calculateTotalPrice("Radar"));
-console.log(calculateTotalPrice("Droid"));
-console.log(calculateTotalPrice("Grip"));
-console.log(calculateTotalPrice("Scanner"));
+// function calculateTotalPrice(productName) {
+//   // Пиши код ниже этой строки
+//   for (const product of products) {
+//     if (product.name === productName) {
+//       return product.price * product.quantity;
+//     }
+//   }
+//   return 0;
+//   // Пиши код выше этой строки
+// }
+// console.log(calculateTotalPrice("Blaster"));
+// console.log(calculateTotalPrice("Radar"));
+// console.log(calculateTotalPrice("Droid"));
+// console.log(calculateTotalPrice("Grip"));
+// console.log(calculateTotalPrice("Scanner"));
 
-// ============== Gery 3.1 =======
-// -----------------------------------------------------
-// Example 3 - Массив объектов
-// Напишите ф-цию calcTotalPrice(stones, stoneName), которая принимает массив обьектов и строку с названием камня. Ф-ция считает и возвращает общую стоимость камней с таким именем, ценой и количеством из обьекта
-// Код
+// // ============== Gery 3.1 =======
+// // -----------------------------------------------------
+// // Example 3 - Массив объектов
+// // Напишите ф-цию calcTotalPrice(stones, stoneName), которая принимает массив обьектов и строку с названием камня. Ф-ция считает и возвращает общую стоимость камней с таким именем, ценой и количеством из обьекта
+// // Код
 
-// function calcTotalPrice(stones, stoneName) {
-//   for (const item of stones) {
-//     if (item.name === stoneName) {
-//       return item.price * item.quantity;
+// // function calcTotalPrice(stones, stoneName) {
+// //   for (const item of stones) {
+// //     if (item.name === stoneName) {
+// //       return item.price * item.quantity;
 //     }
 //   }
 
@@ -278,6 +278,34 @@ console.log(calculateTotalPrice("Scanner"));
 // console.log(calcTotalPrice(stones, "Изумруд"));
 // console.log(calcTotalPrice(stones, "Щебень"));
 // console.log(calcTotalPrice(stones, "sdgsfg"));
+//================================
+
+// =======task 24 ==============
+//Выполни рефакторинг цикла for...of так, чтобы в нём использовалась деструктуризация объекта..
+// Объявлена переменная colors
+// Значение переменной colors это массив
+// Объявлена переменная hexColors
+// Значение переменной hexColors это массив ["#f44336", "#2196f3", "#4caf50", "#ffeb3b"]
+// Объявлена переменная rgbColors
+// Значение переменной rgbColors это массив ["244,67,54", "33,150,243", "76,175,80", "255,235,59"]
+// Для перебора массива используется цикл for...of
+// В цикле for...of используется деструктуризация объекта
+
+// const colors = [
+//   { hex: "#f44336", rgb: "244,67,54" },
+//   { hex: "#2196f3", rgb: "33,150,243" },
+//   { hex: "#4caf50", rgb: "76,175,80" },
+//   { hex: "#ffeb3b", rgb: "255,235,59" },
+// ];
+
+// const hexColors = [];
+// const rgbColors = [];
+// // Change code below this line
+
+// for (const { hex, rgb } of colors) {
+//   hexColors.push(hex);
+//   rgbColors.push(rgb);
+// }
 
 //============== task 26 =====
 // Функция calculateMeanTemperature(forecast) принимает один параметр forecast - объект температур на два дня следующего формата:
@@ -288,28 +316,28 @@ console.log(calculateTotalPrice("Scanner"));
 // Замени объявления переменных todayLow, todayHigh, tomorrowLow и tomorrowHigh одной операцией деструктуризации свойств объекта forecast.
 
 // Change code below this line
-function calculateMeanTemperature(forecast) {
-  const {
-    today: { low: todayLow = 10, high: todayHigh = 20 },
-    tomorrow: { low: tomorrowLow = 20, high: tomorrowHigh = 30 },
-  } = forecast;
+// function calculateMeanTemperature(forecast) {
+//   const {
+//     today: { low: todayLow = 10, high: todayHigh = 20 },
+//     tomorrow: { low: tomorrowLow = 20, high: tomorrowHigh = 30 },
+//   } = forecast;
 
-  // Change code above this line
-  return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
-}
+//   // Change code above this line
+//   return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
+// }
 
-console.log(
-  calculateMeanTemperature({
-    today: { low: 28, high: 32 },
-    tomorrow: { low: 25, high: 29 },
-  })
-);
-console.log(
-  calculateMeanTemperature({
-    today: { low: 37, high: 40 },
-    tomorrow: { low: 33, high: 38 },
-  })
-);
+// console.log(
+//   calculateMeanTemperature({
+//     today: { low: 28, high: 32 },
+//     tomorrow: { low: 25, high: 29 },
+//   })
+// );
+// console.log(
+//   calculateMeanTemperature({
+//     today: { low: 37, high: 40 },
+//     tomorrow: { low: 33, high: 38 },
+//   })
+// );
 
 // ============= task 30 =============
 // Напиши функцию makeTask(data) которая принимает один параметр data - объект со следующими свойствами.
@@ -329,45 +357,45 @@ console.log(
 // Вызов makeTask({ priority: "Low", text: "Choose shampoo" }) возвращает { category: "General", priority: "Low", text: "Choose shampoo", completed: false }
 // Вызов makeTask({ text: "Buy bread" }) возвращает { category: "General", priority: "Normal", text: "Buy bread", completed: false }
 
-function makeTask(data) {
-  const completed = false;
-  const category = "General";
-  const priority = "Normal";
-  // Change code below this line
+// function makeTask(data) {
+//   const completed = false;
+//   const category = "General";
+//   const priority = "Normal";
+//   // Change code below this line
 
-  return { ...{ category, priority, completed }, ...data };
-  // Change code above this line
-}
-console.log(makeTask({}));
-console.log(
-  makeTask({
-    category: "Homemade",
-    priority: "Low",
-    text: "Take out the trash",
-  })
-);
-console.log(makeTask({ category: "Finance", text: "Take interest" }));
-console.log(makeTask({ priority: "Low", text: "Choose shampoo" }));
-console.log(makeTask({ text: "Buy bread" }));
+//   return { ...{ category, priority, completed }, ...data };
+//   // Change code above this line
+// }
+// console.log(makeTask({}));
+// console.log(
+//   makeTask({
+//     category: "Homemade",
+//     priority: "Low",
+//     text: "Take out the trash",
+//   })
+// );
+// console.log(makeTask({ category: "Finance", text: "Take interest" }));
+// console.log(makeTask({ priority: "Low", text: "Choose shampoo" }));
+// console.log(makeTask({ text: "Buy bread" }));
 // ============================
 
-let options = {
-  title: "My menu",
-  items: ["Item1", "Item2"],
-};
+// let options = {
+//   title: "My menu",
+//   items: ["Item1", "Item2"],
+// };
 
-function showMenu({
-  title = "Untitled",
-  width: w = 100, // width присваиваем в w
-  height: h = 200, // height присваиваем в h
-  items: [item1, item2], // первый элемент items присваивается в item1, второй в item2
-}) {
-  console.log(`${title} ${w} ${h}`); // My Menu 100 200
-  console.log(item1); // Item1
-  console.log(item2); // Item2
-}
+// function showMenu({
+//   title = "Untitled",
+//   width: w = 100, // width присваиваем в w
+//   height: h = 200, // height присваиваем в h
+//   items: [item1, item2], // первый элемент items присваивается в item1, второй в item2
+// }) {
+//   console.log(`${title} ${w} ${h}`); // My Menu 100 200
+//   console.log(item1); // Item1
+//   console.log(item2); // Item2
+// }
 
-showMenu(options);
+// showMenu(options);
 
 // ======= task 33 ======
 // Функция findMatches() принимает произвольное количество аргументов. Первым аргументом всегда будет массив чисел, а остальные аргументы будут просто числами.
@@ -382,58 +410,58 @@ showMenu(options);
 // Вызов findMatches([63, 11, 8, 29], 4, 7, 16) возвращает []
 
 // Change code below this line
-function findMatches(numbers, ...args) {
-  const matches = []; // Don't change this line
-  for (const number of numbers) {
-    if (args.includes(number)) {
-      matches.push(number);
-    }
-  }
-  // Change code above this line
-  return matches;
-}
+// function findMatches(numbers, ...args) {
+//   const matches = []; // Don't change this line
+//   for (const number of numbers) {
+//     if (args.includes(number)) {
+//       matches.push(number);
+//     }
+//   }
+//   // Change code above this line
+//   return matches;
+// }
 //=================================
 // = freeCodeCamp----Search and Replace ======
 
-function myReplace(str, before, after) {
-  let arr = str.split(" ");
-  for (let i = 0; i < arr.length; i += 1) {
-    if (arr[i].toLowerCase() !== arr[i]) {
-      after = after[0].toUpperCase(+after.slice(1));
-    }
-    arr.splice(i, 1, after);
-  }
-  str = arr.join(" ");
-  return str;
-}
-myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+// function myReplace(str, before, after) {
+//   let arr = str.split(" ");
+//   for (let i = 0; i < arr.length; i += 1) {
+//     if (arr[i].toLowerCase() !== arr[i]) {
+//       after = after[0].toUpperCase(+after.slice(1));
+//     }
+//     arr.splice(i, 1, after);
+//   }
+//   str = arr.join(" ");
+//   return str;
+// }
+// myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
 //==================
-const array = [2, 5, 9];
+// const array = [2, 5, 9];
 
-console.log(array);
+// console.log(array);
 
-const index = array.indexOf(9);
-if (index > -1) {
-  array.splice(2, 1);
-  array.splice(0, 0, 9);
-}
+// const index = array.indexOf(9);
+// if (index > -1) {
+//   array.splice(2, 1);
+//   array.splice(0, 0, 9);
+// }
 
-// array = [2, 9]
-console.log(array);
+// // array = [2, 9]
+// console.log(array);
 
 //======== task 35 ===========
-const bookShelf = {
-  books: ["The last kingdom", "Haze", "The guardian of dreams"],
-  updateBook(oldName, newName) {
-    // Change code below this line
-    const bookIndex = this.books.indexOf(oldName);
-    if (bookIndex > -1) {
-      this.books.splice(bookIndex, 1, newName);
-    }
-  },
-};
-console.log(bookShelf.updateBook("Haze", "Dungeon chronicles")); // ["The last kingdom", "Dungeon chronicles", "The guardian of dreams"]
-console.log(bookShelf.updateBook("The last kingdom", "Dune")); // ["Dune", "Haze", "The guardian of dreams"]
+// const bookShelf = {
+//   books: ["The last kingdom", "Haze", "The guardian of dreams"],
+//   updateBook(oldName, newName) {
+//     // Change code below this line
+//     const bookIndex = this.books.indexOf(oldName);
+//     if (bookIndex > -1) {
+//       this.books.splice(bookIndex, 1, newName);
+//     }
+//   },
+// };
+// console.log(bookShelf.updateBook("Haze", "Dungeon chronicles")); // ["The last kingdom", "Dungeon chronicles", "The guardian of dreams"]
+// console.log(bookShelf.updateBook("The last kingdom", "Dune")); // ["Dune", "Haze", "The guardian of dreams"]
 //=================================
 
 // ==========task 39 ==========
@@ -445,27 +473,66 @@ console.log(bookShelf.updateBook("The last kingdom", "Dune")); // ["Dune", "Haze
 // После первого вызова метода atTheOldToad.removePotion("Dragon breath"), в свойстве potions будет массив ["Speed potion", Stone skin"]
 // После второго вызова метода atTheOldToad.removePotion("Speed potion"), в свойстве potions будет массив ["Stone skin"]
 
-const atTheOldToad = {
-  potions: ["Speed potion", "Dragon breath", "Stone skin"],
-  removePotion(potionName) {
-    // Change code below this line
-    const message = this.potions.indexOf(potionName);
+// const atTheOldToad1 = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//   removePotion(potionName) {
+//     // Change code below this line
+//     const message = this.potions.indexOf(potionName);
 
-    this.potions.splice(message, 1);
-  },
-};
-console.log(atTheOldToad.removePotion("Dragon breath"));
-console.log(atTheOldToad.removePotion("Speed potion"));
+//     this.potions.splice(message, 1);
+//   },
+// };
+// console.log(atTheOldToad1.removePotion("Dragon breath"));
+// console.log(atTheOldToad1.removePotion("Speed potion"));
 
 // const message = this.potions.indexOf(potionName);
 // if (message > -1) {
 //   this.potions.splice(1, 1);
 // }
 
-var myArray = [
-  { id: 1, name: "Morty" },
-  { id: 2, name: "Rick" },
-  { id: 3, name: "Anna" },
-];
-var newArray = myArray.filter((item) => item.id !== 1);
-console.table(newArray);
+// var myArray = [
+//   { id: 1, name: "Morty" },
+//   { id: 2, name: "Rick" },
+//   { id: 3, name: "Anna" },
+// ];
+// var newArray = myArray.filter((item) => item.id !== 1);
+// console.table(newArray);
+//==============================
+// ======= task 38 ======
+// Дополни метод addPotion(potionName) так, чтобы он ДОБАВЛЯЛ зелье potionName в конец массива зелий в свойстве potions.
+// const atTheOldToad2 = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//   addPotion(potionName) {
+//     // Change code below this line
+//     this.potions.push(potionName);
+
+// Change code above this line
+//   },
+// };
+// ====== task 39 ======
+//Дополни метод removePotion(potionName) так, чтобы он УДАЛЯЛ зелье potionName из массива зелий в свойстве potions.
+// const atTheOldToad3 = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//   removePotion(potionName) {
+//     // Change code below this line
+//     const message = this.potions.indexOf(potionName);
+
+//     this.potions.splice(message, 1);
+
+//     // Change code above this line
+//   },
+// };
+// //===== task 41 =======
+// // Дополни метод updatePotionName(oldName, newName) так, чтобы он ОБНОВЛЯЛ название зелья с oldName на newName, в массиве зелий в свойстве potions.
+// const atTheOldToad4 = {
+//   potions: ["Speed potion", "Dragon breath", "Stone skin"],
+//   updatePotionName(oldName, newName) {
+//     // Change code below this line
+//     const bookIndex = this.potions.indexOf(oldName);
+//     if (bookIndex > -1) {
+//       this.potions.splice(bookIndex, 1, newName);
+//     }
+
+//     // Change code above this line
+//   },
+// };
