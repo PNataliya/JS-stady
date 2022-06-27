@@ -1,4 +1,4 @@
-console.log("module 03.2");
+//console.log("module 03.2");
 
 // ---- question ----
 // const obj = {
