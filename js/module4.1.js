@@ -95,10 +95,12 @@ console.log(pizzaPalace.order("Vienna", makePizza, onOrderError));
 function calculateTotalPrice(orderedItems) {
   let totalPrice = 0;
   // Change code below this line
-
-  for (let i = 0; i < orderedItems.length; i += 1) {
-    totalPrice += orderedItems[i];
-  }
+  orderedItems.forEach(async (orderedItems) => {
+    totalPrice += orderedItems;
+  });
+  //   for (let i = 0; i < orderedItems.length; i += 1) {
+  //     totalPrice += orderedItems[i];
+  //   }
 
   // Change code above this line
   return totalPrice;
@@ -106,3 +108,63 @@ function calculateTotalPrice(orderedItems) {
 console.log(calculateTotalPrice([12, 85, 37, 4])); // возвращает 138)
 console.log(calculateTotalPrice([164, 48, 291])); // возвращает 503)
 console.log(calculateTotalPrice([412, 371, 94, 63, 176])); //возвращает 1116
+//================================
+
+// ========= task 6 ============
+// Функция filterArray(numbers, value) принимает массив чисел numbers и возвращает новый массив, в котором будут только те элементы оригинального массива, которые больше чем значение параметра value.
+
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала метод forEach.
+function filterArray(numbers, value) {
+  const filteredNumbers = [];
+  // Change code below this line
+  numbers.forEach((number) => {
+    if (number > value) filteredNumbers.push(number);
+  });
+  //   for (let i = 0; i < numbers.length; i += 1) {
+  //     if (numbers[i] > value) {
+  //       filteredNumbers.push(numbers[i]);
+  //     }
+  //   }
+
+  // Change code above this line
+  return filteredNumbers;
+}
+console.log(filterArray([1, 2, 3, 4, 5], 3)); // возвращает [4, 5]
+console.log(filterArray([1, 2, 3, 4, 5], 4)); // возвращает [5]
+console.log(filterArray([1, 2, 3, 4, 5], 5)); // возвращает []
+console.log(filterArray([12, 24, 8, 41, 76], 38)); // возвращает [41, 76]
+console.log(filterArray([12, 24, 8, 41, 76], 20)); // возвращает [24, 41, 76]
+
+// orderedItems.forEach(async (orderedItems) => {
+//   totalPrice += orderedItems;
+// });
+//==============================
+
+// ============== task 7 =========
+// Функция getCommonElements(firstArray, secondArray) принимает два массива произвольной длины в параметры firstArray и secondArray, и возвращает новый массив их общих элементов, то есть тех которые есть в обоих массивах.
+
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала метод forEach./
+console.log(`task 7`);
+
+function getCommonElements(firstArray, secondArray) {
+  const commonElements = [];
+  // Change code below this line
+  firstArray.forEach((firstArray) => {
+    if (secondArray.includes(firstArray)) commonElements.push(firstArray);
+  });
+
+  //   for (let i = 0; i < firstArray.length; i += 1) {
+  //     if (secondArray.includes(firstArray[i])) {
+  //       commonElements.push(firstArray[i]);
+  //     }
+  //   }
+
+  return commonElements;
+  // Change code above this line
+}
+console.log(getCommonElements([1, 2, 3], [2, 4])); // возвращает [2]
+console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19])); // возвращает [1, 2]
+console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27])); // возвращает [12, 27, 3]
+console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40])); // возвращает [10, 30, 40]
+console.log(getCommonElements([1, 2, 3], [10, 20, 30])); // возвращает []
+// =============================
