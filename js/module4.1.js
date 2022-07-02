@@ -852,26 +852,17 @@ const users = [
   },
 ];
 
-const getTotalBalanceByGender = (users, gender) =>
-  users.map((user) => student.gender);
-//users.find((option) => option.gender === gender);
-//
-//const isAnyUserActive = (users) => users.some((user) => user.isActive === true);
-//
-// students.reduce((total, student) => {
-//   return total + student.score;
-// }, 0);
-// users.Map((user) => user.gender);
-// users.reduce((totaBalance, user) => totaBalance + user.balance, 0);
+const getTotalBalanceByGender = (users, gender) => {
+  getBalance = [...users]
+    .filter((user) => user.gender === gender)
+    .reduce((total, user) => {
+      return total + user.balance;
+    }, 0);
+  return getBalance;
+};
 
-console.table(getTotalBalanceByGender);
-//const getUserWithEmail = (users, email) => users.find((option) => option.email === email);
-//.find(option => option.label === "blue");
-//.reduce((totalLikes, tweet) => totalLikes + tweet.likes, 0);
-//// const getSortedFriends = users
-//   .flatMap((user) => user.friends)
-//   .filter((friend, index, array) => array.indexOf(friend) === index)
-//   .sort((first, second) => first.localeCompare(second));
+console.log(getTotalBalanceByGender("female"));
+
 //============================================
 // console.log(`exam from conspect`);
 // const students = [
@@ -928,3 +919,72 @@ console.table(getTotalBalanceByGender);
 // const tagCount = countTags(tags);
 // console.log(tagCount);
 // //================================
+
+console.log(`====== Salary ================`);
+let user1 = {
+  balance: "$1,825.65",
+  picture: "https://placehold.it/32x32",
+  age: 21,
+  name: "Golden Branch",
+  gender: "male",
+  greeting: "Hello, Golden Branch! You have 7 unread messages.",
+  favouriteFruit: "banana",
+};
+
+let user2 = {
+  balance: "$1",
+  picture: "https://placehold.it/32x32",
+  age: 21,
+  name: "Gol Bra",
+  gender: "male",
+  greeting: "Hello, Golden Branch! You have 7 unread messages.",
+  favouriteFruit: "banana",
+};
+console.log(user1); //---
+let userS = [user1, user2];
+
+console.log(userS); //---
+
+function showSalary(userS, age) {
+  // ваш код...
+  console.log("----"); //---
+  let ArrUserAgeIsTrue = userS.filter((item) => {
+    if (item.age <= age) return item;
+  });
+
+  console.log(ArrUserAgeIsTrue); //---
+
+  let ArrNameAndBalance = ArrUserAgeIsTrue.map((item) => {
+    let i = {
+      name: "",
+      balance: 0,
+    };
+
+    i.name = item.name;
+    i.balance = item.balance;
+
+    return i;
+  });
+
+  console.log(ArrNameAndBalance); //---
+
+  let ArrWithoutObj = ArrNameAndBalance.map((item) => {
+    return Object.values(item);
+  });
+
+  console.log(ArrWithoutObj); //---
+
+  // присвоим пустую строку, иначе начальное значение будет undefined
+  let NewStr = "";
+
+  // < вместо <=
+  for (let i = 0; i < ArrWithoutObj.length; i++) {
+    // ArrWithoutObj массив массивов строк
+    // ArrWithoutObj[i] массив строк, поетому джоиним его по коме и добавляем в конец перенос каретки
+    // ArrWithoutObj[i][j] - строка, и как и написано в комментариях у строки нету метода join
+    NewStr += ArrWithoutObj[i].join(",") + "\r\n";
+  }
+  console.log(NewStr);
+}
+
+showSalary(userS, 30);
