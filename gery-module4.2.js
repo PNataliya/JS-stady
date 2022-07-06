@@ -1,4 +1,4 @@
-console.log("module 04.2");
+// console.log("module 04.2");
 
 // function sum(a, b) {
 //   console.log(a + b);

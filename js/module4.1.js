@@ -861,7 +861,7 @@ const getTotalBalanceByGender = (users, gender) => {
   return getBalance;
 };
 
-console.log(getTotalBalanceByGender("female"));
+//console.log(getTotalBalanceByGender("female"));
 
 //============================================
 // console.log(`exam from conspect`);
